@@ -14,6 +14,9 @@ module.exports = {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
+            height: theme => ({
+                "sidebar": "calc(100vh - 64px)",
+            }),
         },
     },
 
@@ -21,7 +24,11 @@ module.exports = {
         extend: {
             opacity: ['disabled'],
         },
+        scrollbar: ['dark']
     },
 
-    plugins: [require('@tailwindcss/forms')],
+    plugins: [
+        require('@tailwindcss/forms'),
+        require('tailwind-scrollbar'),
+    ],
 };

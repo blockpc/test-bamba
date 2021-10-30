@@ -19,6 +19,7 @@ class EmailVerificationTest extends TestCase
         $user = User::factory()->create([
             'email_verified_at' => null,
         ]);
+        $user->profile()->create(['firstname' => $user->name]);
 
         $response = $this->actingAs($user)->get('/verify-email');
 
@@ -30,6 +31,7 @@ class EmailVerificationTest extends TestCase
         $user = User::factory()->create([
             'email_verified_at' => null,
         ]);
+        $user->profile()->create(['firstname' => $user->name]);
 
         Event::fake();
 
@@ -51,6 +53,7 @@ class EmailVerificationTest extends TestCase
         $user = User::factory()->create([
             'email_verified_at' => null,
         ]);
+        $user->profile()->create(['firstname' => $user->name]);
 
         $verificationUrl = URL::temporarySignedRoute(
             'verification.verify',

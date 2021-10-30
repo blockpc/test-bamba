@@ -15,7 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('pages.home');
-});
+})->name('home');
+
 Route::get('/welcome', function () {
     return view('welcome');
 });
@@ -23,5 +24,13 @@ Route::get('/welcome', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+Route::get('/users', function () {
+    return view('users.index');
+})->middleware(['auth'])->name('users.index');
+
+Route::get('/users/create', function () {
+    return view('users.create');
+})->middleware(['auth'])->name('users.create');
 
 require __DIR__.'/auth.php';
