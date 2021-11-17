@@ -33,13 +33,9 @@ And change some components from the original laravel install.
 
 You must before start your proyect remove or change the git remote url
 
-### Remove git dir
+### Change remote
 
-- rm -fr .git
-
-### Or change remote
-
-- git remote set-url origin url-at-your-proyect-git
+- git remote set-url origin <url-at-your-proyect-git>
 - git remote -v
 
 Enjoy!

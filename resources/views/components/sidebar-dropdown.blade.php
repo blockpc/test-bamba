@@ -43,7 +43,7 @@ $classes = ($active ?? false)
             class="absolute z-20 mt-2 {{ $width }} rounded-md shadow-lg {{ $alignmentClasses }}"
             style="display: none;"
             @click="open = false">
-        <div class="mx-1 p-1 nav-dark">
+        <div class="p-1 nav-dark">
             {{ $content }}
         </div>
     </div>
