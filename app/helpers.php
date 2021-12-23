@@ -9,7 +9,7 @@ if (! function_exists('current_user')) {
 if (! function_exists('image_profile')) {
     function image_profile($user = null) : string
     {
-        $user = $user ?? auth()->user();
+        $user = $user ?? current_user();
         if ( $image = $user->profile->image ) {
             return $image->url;
         } else {

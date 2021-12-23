@@ -12,7 +12,7 @@ class Profile extends Model
     public $timestamps = false;
     
     protected $fillable = [
-        'firstname', 'lastname', 'user_id', 'phone'
+        'firstname', 'lastname', 'user_id', 'phone', 'image'
     ];
 
     /**
@@ -36,13 +36,5 @@ class Profile extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
-    }
-
-    /**
-     * Get image User. Polimorph Relation
-     */
-    public function image()
-    {
-        return $this->morphOne(Image::class, 'imageable');
     }
 }

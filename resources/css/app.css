@@ -2,15 +2,4 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-.text-dark {
-    @apply text-gray-700 dark:text-gray-100;
-}
-.bg-dark {
-    @apply bg-gray-100 dark:bg-gray-700;
-}
-.nav-dark {
-    @apply bg-white dark:bg-gray-700 border-b border-gray-100 dark:border-gray-600;
-}
-.content {
-    @apply max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8;
-}
+@import './blockpc.css';
