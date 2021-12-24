@@ -45,14 +45,11 @@ class ProfilePage extends Component
         }
         $this->auth->save();
         if ( $this->photo ) {
-            $tenant = tenant('id') ?? 'central';
             $name = Str::slug(mb_strtolower($this->auth->name));
             $extension = $this->photo->extension();
             if ( $this->auth->profile->image && file_exists(public_path($this->auth->profile->image)) ) {
                 unlink(public_path($this->auth->profile->image));
             }
-
-            //$image_path = storage_path($path);
 
             $img = Image::make($this->photo->getRealPath())
                     ->encode('jpg', 65)
@@ -62,9 +59,7 @@ class ProfilePage extends Component
                     });
             $img->stream(); // <-- Key point
 
-            $dir = "{$tenant}/photo_profiles";
-            //$path = $this->photo->storeAs($dir, "{$name}.{$extension}", 'public');
-            $path = "{$tenant}/photo_profiles/{$name}.{$extension}";
+            $path = "photo_profiles/{$name}.{$extension}";
             Storage::disk('public')->put($path, $img);
             
             $this->profile->image = "/storage/{$path}";
@@ -120,5 +115,10 @@ class ProfilePage extends Component
         $this->photo = null;
         $this->resetErrorBag();
         $this->resetValidation();
+    }
+
+    public function generate()
+    {
+        $this->password = $this->password_confirmation = Str::random(12);
     }
 }

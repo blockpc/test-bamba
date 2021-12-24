@@ -56,11 +56,15 @@
     "Eliminated": "Eliminados",
     "Address": "Dirección",
     "Log In": "Acceder",
-    "if the user forgot their password, you could be send a email with a link to page for change the password. This link is valid for one change.": "Si el usuario olvido su contraseña, tu podrias enviar un correo con un link para que cambie su contraseña. Este link es valido por un cambio.",
+    "if the user forgot their password, you could be send a email with a link to page for change the password. This link is valid for one change.": "Si el usuario olvido su contraseña, tu podrias enviarle un correo con un link para que cambie su contraseña. Este link es valido por un cambio.",
     "Info related at user credentials.":  "Información relacionada con las credenciales del usuario.",
     "Info related at user.":  "Información relacionada al usuario.",
     "The value of Alias must be one word, only alphabetic characters. Represents the subdomain name.":  "El valor de Alias debería ser una palabra, solo caracteres letras. Representa el nombre del subdominio.",
     "The value of Alias can not be edited.":  "El valor de Alias no puede ser editado.",
+
+    "Resend Password": "Re-enviar Clave",
+    "User Data": "Datos del Usuario",
+    "Info related at user": "Información relacionada al usuario",
 
     "Delete Role": "Eliminar Cargo",
     "You are sure you want to eliminate the associated role?": "¿Esta seguro de querer eliminar al cargo asociado?",

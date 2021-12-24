@@ -3,18 +3,13 @@
         <x-slot name="title">{{$title_loading}}</x-slot>
         Esto podria tardar un rato, por favor no cierres la página</x-loading>
 
-    @if ( $user->exists )
-    <h2 class="text-bse md:text-lg mb-4 text-center">{{$user->profile->fullname}}</h2>
-    @else
-    <h2 class="text-bse md:text-lg mb-4 text-center">{{__('New User')}}</h2>
-    @endif
     <form wire:submit.prevent="save" @table-users.window="open = 'table'">
         <div class="md:flex mb-8">
             <div class="md:w-1/3 flex-col md:space-y-2">
-                <legend class="uppercase tracking-wide text-sm">{{__('Sucursal Data')}}</legend>
-                <p class="text-xs font-light text-red">{{__('Info related at sucursal')}}</p>
+                <legend class="uppercase tracking-wide text-sm">{{__('User Data')}}</legend>
+                <p class="text-xs font-light text-red">{{__('Info related at user')}}</p>
             </div>
-            <div class="md:flex-1 mt-2 mb:mt-0 md:px-3">
+            <div class="md:flex-1 mt-2 mb:mt-0 md:px-3 shadow-lg pb-4">
                 <div class="grid gap-4">
                     {{-- User name --}}
                     <div class="flex flex-col md:flex-row text-xs md:text-sm items-center">
@@ -86,19 +81,31 @@
                             @enderror
                         </div>
                     </div>
-
-                    {{-- buttons --}}
-                    <div class="flex items-center justify-between">
-                        @if ( $type == 'new' )
-                        <div class="">
-                            <button class="btn-sm btn-primary">{{ __('Create User') }}</button>
+                </div>
+            </div>
+        </div>
+        <div class="md:flex mb-8">
+            <div class="md:w-1/3">
+                <legend class="uppercase tracking-wide text-sm"></legend>
+                <p class="text-xs font-light text-red"></p>
+            </div>
+            <div class="md:flex-1 mt-2 mb:mt-0 md:px-3">
+                <div class="grid grid-cols-3">
+                    <div class="hidden md:block col-span-1"></div>
+                    <div class="col-span-3 md:col-span-2">
+                        {{-- buttons --}}
+                        <div class="flex items-center justify-between">
+                            @if ( $type == 'new' )
+                            <div class="">
+                                <button class="btn-sm btn-primary">{{ __('Create User') }}</button>
+                            </div>
+                            @else
+                            <div class="">
+                                <button class="btn-sm btn-success">{{ __('Edit User') }}</button>
+                            </div>
+                            @endif
+                            <button type="button" class="btn-sm btn-warning" wire:click="cancel">{{__('Cancel')}}</button>
                         </div>
-                        @else
-                        <div class="">
-                            <button class="btn-sm btn-success">{{ __('Edit User') }}</button>
-                        </div>
-                        @endif
-                        <button type="button" class="btn-sm btn-warning" wire:click="cancel">{{__('Cancel')}}</button>
                     </div>
                 </div>
             </div>
@@ -107,9 +114,8 @@
         <div class="md:flex mb-8">
             <div class="md:w-1/3 flex-col md:space-y-2">
                 <legend class="uppercase tracking-wide text-sm">{{__('Resend Password')}}</legend>
-                
             </div>
-            <div class="md:flex-1 mt-2 mb:mt-0 md:px-3">
+            <div class="md:flex-1 mt-2 mb:mt-0 md:px-3 shadow-lg pb-4">
                 <div class="grid gap-4">
                     <div class="flex justify-end">
                         <p class="text-xs font-light text-red">{{__('if the user forgot their password, you could be send a email with a link to page for change the password. This link is valid for one change.')}}</p>

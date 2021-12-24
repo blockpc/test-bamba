@@ -2,7 +2,7 @@
 
 ## Laravel backend Layout
 
-This repo contains a frontend and bakend layouts for a clean install laravel breeze  
+This repo contains a frontend and bakend layouts for a laravel breeze  
 Contains:
 - Laravel 8
 - Tailwind
@@ -10,7 +10,13 @@ Contains:
 - Alpine JS
 
 Helpers: file autoload helper on `app\helpers.php`
-Packages PHP: none added
+
+Packages PHP:
+- christophrumpel/missing-livewire-assertions
+- spatie/laravel-permission
+- yoeunes/toastr
+- intervention/image
+
 Packages NPM: only one, [tailwind-scrollbar](https://github.com/adoxography/tailwind-scrollbar)
 
 This packages includes a model `Profile` (one-to-one for user) and model `Image` (polimorphic model)
