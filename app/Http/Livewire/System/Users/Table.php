@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\System\Users;
 
 use App\Models\User;
+use Blockpc\Events\ReSendLinkToChangePasswordEvent;
 use Blockpc\Traits\WithSorting;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -59,6 +60,10 @@ class Table extends Component
 
     public function delete(User $user)
     {
+        if ( $user->id === $this->auth->id ) {
+            $this->addError('delete', 'No puedes eliminar tu propio usuario');
+            return;
+        }
         $name = $user->name;
         $user->delete();
         session()->flash('delete', "Un usuario <b>{$name}</b> fue eliminado.");
@@ -68,6 +73,9 @@ class Table extends Component
     {
         $user = User::withTrashed()->where('id', $id)->first();
         $user->restore();
+
+        ReSendLinkToChangePasswordEvent::dispatch($user);
+        
         session()->flash('restore', "Un usuario <b>{$user->name}</b> fue restaurado.");
     }
 

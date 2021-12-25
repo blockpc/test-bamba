@@ -65,11 +65,15 @@
     "Resend Password": "Re-enviar Clave",
     "User Data": "Datos del Usuario",
     "Info related at user": "Información relacionada al usuario",
+    "Restore User": "Restaurar Usuario",
+    "Are you sure you want to restore the associated user?": "¿Esta seguro de querer restaurar al usuario asociado?",
+    "Are you sure you want to delete the associated user?": "¿Esta seguro de querer eliminar al usuario asociado?",
+    "This user will receive a link for set new password.": "El usuario recibira un link para una nueva contraseña",
 
     "Delete Role": "Eliminar Cargo",
-    "You are sure you want to eliminate the associated role?": "¿Esta seguro de querer eliminar al cargo asociado?",
+    "Are you sure you want to delete the associated role?": "¿Esta seguro de querer eliminar al cargo asociado?",
     "Restore Role": "Restaurar Cargo",
-    "You are sure you want to restore the associated role?": "¿Esta seguro de querer restaurar al cargo asociado?",
+    "Are you sure you want to restore the associated role?": "¿Esta seguro de querer restaurar al cargo asociado?",
 
     "Permissions List": "Lista de Permisos",
     "Show params": "Mostrar parármetros",

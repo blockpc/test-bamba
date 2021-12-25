@@ -24,4 +24,9 @@ final class Role extends ModelsRole
         'display_name',
         'description',
     ];
+
+    public function hasUsers()
+    {
+        return $this->users()->count();
+    }
 }

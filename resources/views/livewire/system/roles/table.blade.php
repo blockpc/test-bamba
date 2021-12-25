@@ -1,5 +1,18 @@
 <div>
     <div class="flex-col space-y-4">
+        @if ( session()->has('delete_role') && $error = session('delete_role') )
+        <div class="alert-danger my-2" id="alert-message-delete-error">
+            <div class="flex">
+                <div class="flex-1">
+                    <p class="font-bold">{{__('Error')}}!</p>
+                    <p class="text-sm">{!! $error !!}.</p>
+                </div>
+                <button type="button" class="btn-sm" onclick="closeAlert('alert-message-delete-error')">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5 fill-current"><path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"></path></svg>
+                </button>
+            </div>
+        </div>
+        @endif
         <div class="flex flex-row">
             <div class="w-full mr-1 relative rounded-md shadow-sm">
                 <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -66,7 +79,7 @@
                                                 <button wire:click="restore({{$rol->id}})" type="button" class="btn btn-primary" x-on:click="showModal = false">{{__('Restore Role')}}</button>
                                             </x-slot>
                                             <h2 class="py-4 text-2xl font-semibold mx-auto">{{$rol->display_name}}</h2>
-                                            <p>¿{{__('You are sure you want to restore the associated role?')}}</p>
+                                            <p>¿{{__('Are you sure you want to restore the associated role?')}}</p>
                                         </x-modals.mini>
                                     </div>
                                     @endif
@@ -88,7 +101,7 @@
                                                 <button wire:click="delete('{{$rol->id}}')" type="button" class="btn btn-danger" x-on:click="showModal = false">{{__('Delete Role')}}</button>
                                             </x-slot>
                                             <h2 class="py-4 text-2xl font-semibold mx-auto">{{$rol->display_name}}</h2>
-                                            <p>{{__('You are sure you want to eliminate the associated role?')}}</p>
+                                            <p>{{__('Are you sure you want to delete the associated role?')}}</p>
                                         </x-modals.mini>
                                     </div>
                                     @endif

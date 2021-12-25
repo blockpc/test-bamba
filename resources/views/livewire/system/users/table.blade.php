@@ -71,17 +71,18 @@
                             <div class="flex justify-end space-x-2">
                                 @if ( isset($users_deleted) && $users_deleted)
                                 <div class="" x-data="{ showModal : false }">
-                                    <button class="btn-sm btn-info" type="button" x-on:click="showModal = true">
+                                    <button class="btn-sm btn-info" type="button" x-on:click="showModal = true" title="{{__('Restore User')}}">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-4 h-4 fill-current"><path d="M9 10h6c1.654 0 3 1.346 3 3s-1.346 3-3 3h-3v2h3c2.757 0 5-2.243 5-5s-2.243-5-5-5H9V5L4 9l5 4v-3z"></path></svg>
                                     </button>
                                     <x-modals.mini class="border-2 border-blue-800">
-                                        <x-slot name="title">Restaurar usuario</x-slot>
+                                        <x-slot name="title">{{__('Restore User')}}</x-slot>
                                         <x-slot name="action">
                                             <button x-on:click="showModal = false" class="btn btn-warning">{{__('Cancel')}}</button>
-                                            <button wire:click="restore({{$user->id}})" type="button" class="btn btn-primary" x-on:click="showModal = false">Restaurar usuario</button>
+                                            <button wire:click="restore({{$user->id}})" type="button" class="btn btn-primary" x-on:click="showModal = false">{{__('Restore User')}}</button>
                                         </x-slot>
                                         <x-box-user :user=$user></x-box-user>
-                                        <p>¿Esta seguro de querer restaurar al usuario asociado?</p>
+                                        <p>{{__('Are you sure you want to restore the associated user?')}}</p>
+                                        <p>{{__('This user will receive a link for set new password.')}}</p>
                                     </x-modals.mini>
                                 </div>
                                 @else
@@ -92,17 +93,17 @@
                                     @endif
                                     @if ( current_user()->can('user delete') && current_user()->id != $user->id )
                                     <div class="" x-data="{ showModal : false }">
-                                        <button class="btn-sm btn-danger" type="button" x-on:click="showModal = true">
+                                        <button class="btn-sm btn-danger" type="button" x-on:click="showModal = true" title="{{__('Delete user')}}">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-4 h-4 fill-current"><path d="M5 20a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8h2V6h-4V4a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v2H3v2h2zM9 4h6v2H9zM8 8h9v12H7V8z"></path><path d="M9 10h2v8H9zm4 0h2v8h-2z"></path></svg>
                                         </button>
                                         <x-modals.mini class="border-2 border-red-800">
-                                            <x-slot name="title">Eliminar usuario</x-slot>
+                                            <x-slot name="title">{{__('Delete user')}}</x-slot>
                                             <x-slot name="action">
                                                 <button x-on:click="showModal = false" class="btn btn-warning">{{__('Cancel')}}</button>
-                                                <button wire:click="delete('{{$user->name}}')" type="button" class="btn btn-danger" x-on:click="showModal = false">Eliminar usuario</button>
+                                                <button wire:click="delete('{{$user->name}}')" type="button" class="btn btn-danger" x-on:click="showModal = false">{{__('Delete user')}}</button>
                                             </x-slot>
                                             <x-box-user :user=$user></x-box-user>
-                                            <p>¿Esta seguro de querer eliminar al usuario asociado?</p>
+                                            <p>{{__('Are you sure you want to delete the associated user?')}}</p>
                                         </x-modals.mini>
                                     </div>
                                     @endif
