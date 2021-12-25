@@ -11,11 +11,11 @@ Contains:
 
 Helpers: file autoload helper on `app\helpers.php`
 
-Packages PHP:
-- christophrumpel/missing-livewire-assertions
-- spatie/laravel-permission
-- yoeunes/toastr
-- intervention/image
+Packages for laravel:
+- [christophrumpel/missing-livewire-assertions](https://github.com/christophrumpel/missing-livewire-assertions)
+- [spatie/laravel-permission](https://spatie.be/index.php/docs/laravel-permission)
+- [yoeunes/toastr](https://github.com/yoeunes/toastr)
+- [intervention/image](http://image.intervention.io/)
 
 Packages NPM: only one, [tailwind-scrollbar](https://github.com/adoxography/tailwind-scrollbar)
 

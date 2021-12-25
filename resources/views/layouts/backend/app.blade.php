@@ -137,7 +137,6 @@
                 <div class="flex flex-col justify-between px-2 sm:px-4 space-y-2 min-h-screen w-full">
                     <main class="pt-16">
                         @include('layouts.backend.messages')
-                        {{-- Content Yield --}}
                         @yield('content')
                     </main>
                     <footer class="h-16 p-2 sm:p-4">
