@@ -4,6 +4,9 @@ import Alpine from 'alpinejs';
 window.Alpine = Alpine;
 Alpine.start();
 
+const Turbolinks = require("turbolinks");
+Turbolinks.start();
+
 // TailwindCSS Dark Mode
 // buttons switch mode
 document.querySelectorAll(".setMode").forEach(item => 

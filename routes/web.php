@@ -2,12 +2,7 @@
 
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\System\ChangePasswordController;
-use App\Http\Controllers\System\DashboardController;
 use App\Http\Controllers\System\PageHomeController;
-use App\Http\Controllers\System\PermissionsController;
-use App\Http\Controllers\System\ProfileController;
-use App\Http\Controllers\System\RolesController;
-use App\Http\Controllers\System\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,25 +36,5 @@ Route::middleware([
 
         Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 
-        Route::prefix('sistema')->group(function() {
-            Route::get('/', function () {
-                return redirect(route('dashboard'));
-            });
-
-            Route::get('/perfil-usuario', ProfileController::class)
-                ->name('profile');
-
-            Route::get('/dashboard', DashboardController::class)
-                ->name('dashboard');
-            
-            Route::get('/usuarios', [UsersController::class, 'index'])
-                ->name('users');
-
-            Route::get('/roles', RolesController::class)
-                ->name('roles.index');
-
-            Route::get('/permisos', PermissionsController::class)
-                ->name('permissions.index');
-        });
     });
 });

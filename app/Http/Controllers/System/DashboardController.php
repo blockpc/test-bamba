@@ -19,13 +19,13 @@ class DashboardController extends Controller
         $auth = current_user();
 
         if ( $auth->hasRole('sudo') ) {
-            return view('dashboards.sudo');
+            return view('system.dashboards.sudo');
         }
 
         if ( $auth->hasRole('admin') ) {
-            return view('dashboards.admin');
+            return view('system.dashboards.admin');
         }
         
-        return view('dashboards.user');
+        return view('system.dashboards.user');
     }
 }
