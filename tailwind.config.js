@@ -3,7 +3,7 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 module.exports = {
     darkMode: 'class',
 
-    purge: [
+    content: [
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
@@ -19,13 +19,6 @@ module.exports = {
                 "sidebar": "calc(100vh - 64px)",
             }),
         },
-    },
-
-    variants: {
-        extend: {
-            opacity: ['disabled'],
-        },
-        scrollbar: ['dark']
     },
 
     plugins: [
