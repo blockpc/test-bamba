@@ -45,8 +45,17 @@
     .label {
         @apply block font-medium text-sm;
     }
+    .input-search {
+        @apply block h-8 w-full pl-10 pr-12 text-sm text-dark bg-dark focus:ring-gray-500 border-gray-500 focus:border-gray-400 rounded-md;
+    }
     .input {
-        @apply rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 bg-transparent text-sm;
+        @apply block rounded-md shadow-md border-gray-300 dark:border-gray-500 bg-transparent;
+    }
+    .input-sm {
+        @apply text-sm h-8;
+    }
+    .input-md {
+        @apply text-base h-10;
     }
     .text-error {
         @apply text-sm text-red-600 dark:text-red-400;

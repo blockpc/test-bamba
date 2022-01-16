@@ -11,7 +11,7 @@
                     <div class="flex flex-col md:flex-row text-xs md:text-sm items-center">
                         <label class="w-full md:w-1/3" for="user_name">{{__('User name')}}</label>
                         <div class="flex flex-col space-y-2 w-full md:w-2/3 mt-1 md:mt-0">
-                            <input wire:model.defer="auth.name" id="user_name" class="input block @error('auth.name') border-error @enderror" type="text" placeholder="{{__('User name')}}" required />
+                            <input wire:model.defer="auth.name" id="user_name" class="input input-sm @error('auth.name') border-error @enderror" type="text" placeholder="{{__('User name')}}" required />
                             @error('auth.name')
                                 <div class="text-error">{{$message}}</div>
                             @enderror
@@ -21,7 +21,7 @@
                     <div class="flex flex-col md:flex-row text-xs md:text-sm items-center">
                         <label class="w-full md:w-1/3" for="user_email">{{__('User email')}}</label>
                         <div class="flex flex-col space-y-2 w-full md:w-2/3 mt-1 md:mt-0">
-                            <input wire:model.defer="auth.email" id="user_email" class="input block @error('auth.email') border-error @enderror" type="email" placeholder="{{__('User email')}}" required />
+                            <input wire:model.defer="auth.email" id="user_email" class="input input-sm @error('auth.email') border-error @enderror" type="email" placeholder="{{__('User email')}}" required />
                             @error('auth.email')
                                 <div class="text-error">{{$message}}</div>
                             @enderror
@@ -41,7 +41,7 @@
                     <div class="flex flex-col md:flex-row text-xs md:text-sm items-center">
                         <label class="w-full md:w-1/3" for="profile_firstname">{{__('Firstname')}}</label>
                         <div class="flex flex-col space-y-2 w-full md:w-2/3 mt-1 md:mt-0">
-                            <input wire:model.defer="profile.firstname" id="profile_firstname" class="input block @error('profile.firstname') border-error @enderror" type="text" placeholder="{{__('Firstname')}}" />
+                            <input wire:model.defer="profile.firstname" id="profile_firstname" class="input input-sm @error('profile.firstname') border-error @enderror" type="text" placeholder="{{__('Firstname')}}" />
                             @error('profile.firstname')
                                 <div class="text-error">{{$message}}</div>
                             @enderror
@@ -51,7 +51,7 @@
                     <div class="flex flex-col md:flex-row text-xs md:text-sm items-center">
                         <label class="w-full md:w-1/3" for="profile_lastname">{{__('Lastname')}}</label>
                         <div class="flex flex-col space-y-2 w-full md:w-2/3 mt-1 md:mt-0">
-                            <input wire:model.defer="profile.lastname" id="profile_lastname" class="input block @error('profile.lastname') border-error @enderror" type="text" placeholder="{{__('Lastname')}}" />
+                            <input wire:model.defer="profile.lastname" id="profile_lastname" class="input input-sm @error('profile.lastname') border-error @enderror" type="text" placeholder="{{__('Lastname')}}" />
                             @error('profile.lastname')
                                 <div class="text-error">{{$message}}</div>
                             @enderror
@@ -61,7 +61,7 @@
                     <div class="flex flex-col md:flex-row text-xs md:text-sm items-center">
                         <label class="w-full md:w-1/3" for="profile_phone">{{__('Phone')}}</label>
                         <div class="flex flex-col space-y-2 w-full md:w-2/3 mt-1 md:mt-0">
-                            <input wire:model.defer="profile.phone" id="profile_phone" class="input block @error('profile.phone') border-error @enderror" type="text" placeholder="{{__('Phone')}}" />
+                            <input wire:model.defer="profile.phone" id="profile_phone" class="input input-sm @error('profile.phone') border-error @enderror" type="text" placeholder="{{__('Phone')}}" />
                             @error('profile.phone')
                                 <div class="text-error">{{$message}}</div>
                             @enderror
@@ -125,7 +125,7 @@
                         <div class="flex flex-col space-y-2 w-full md:w-2/3 mt-1 md:mt-0">
                             <div class="flex" x-data="{show: false}">
                                 <div class="relative w-full">
-                                    <input wire:model.defer="password" id="user_password" class="input w-full @error('password') border-error @enderror" :type="show ? 'text' : 'password'" placeholder="{{__('New Password')}}" />
+                                    <input wire:model.defer="password" id="user_password" class="input input-sm w-full @error('password') border-error @enderror" :type="show ? 'text' : 'password'" placeholder="{{__('New Password')}}" />
                                     <button type="button" class="absolute inset-y-0 right-2 flex items-center" x-on:click="show=!show">
                                         {{-- eye on --}}
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" x-show="show">
@@ -149,7 +149,7 @@
                     <div class="flex flex-col md:flex-row text-xs md:text-sm items-center">
                         <label class="w-full md:w-1/3" for="user_password_confirmation">{{__('Password Confirm')}}</label>
                         <div class="flex flex-col space-y-2 w-full md:w-2/3 mt-1 md:mt-0">
-                            <input wire:model.defer="password_confirmation" id="user_password_confirmation" class="input block @error('password_confirmation') border-error @enderror" type="password" placeholder="{{__('User password')}}" />
+                            <input wire:model.defer="password_confirmation" id="user_password_confirmation" class="input input-sm @error('password_confirmation') border-error @enderror" type="password" placeholder="{{__('User password')}}" />
                             @error('password_confirmation')
                                 <div class="text-error">{{$message}}</div>
                             @enderror
