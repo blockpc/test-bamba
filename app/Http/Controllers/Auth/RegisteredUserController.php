@@ -49,6 +49,8 @@ class RegisteredUserController extends Controller
             'firstname' => $user->name
         ]);
 
+        $user->syncRoles(3);
+
         event(new Registered($user));
 
         Auth::login($user);
