@@ -14,6 +14,7 @@ return [
             ['name' => Database\Seeders\RoleAndPermissionsSeeder::class, 'callable' => true],
             ['name' => Database\Seeders\UsersSeeder::class, 'callable' => true],
             ['name' => Database\Seeders\GeneralSeeder::class, 'callable' => true],
+            ['name' => Database\Seeders\ProductSeeder::class, 'callable' => true],
         ],
     ]
 ];

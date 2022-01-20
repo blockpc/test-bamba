@@ -42,3 +42,5 @@ Se pueden revisar los cargos y permisos por defecto desde el seeder _RoleAndPerm
 ### Test para Productos
 
 Se encuentran en _tests/Products_
+
+Correr el comando `php artisan test --testsuite=Products`
