@@ -129,6 +129,69 @@ class RoleAndPermissionsSeeder extends Seeder
             'key' => 'permissions',
         ]);
 
+        /* Test Bamba */
+        $product_list      = Permission::create([
+            'name' => 'product list', 
+            'display_name' => 'Listado de Productos',
+            'description' => 'Permite acceder al listado de productos',
+            'key' => 'products',
+        ]);
+        $product_create    = Permission::create([
+            'name' => 'product create', 
+            'display_name' => 'Crear Productos',
+            'description' => 'Permite crear un producto',
+            'key' => 'products',
+        ]);
+        $product_update    = Permission::create([
+            'name' => 'product update', 
+            'display_name' => 'Actualizar Productos',
+            'description' => 'Permite actualizar un producto',
+            'key' => 'products',
+        ]);
+        $product_delete    = Permission::create([
+            'name' => 'product delete', 
+            'display_name' => 'Eliminar Productos',
+            'description' => 'Permite eliminar un producto',
+            'key' => 'products',
+        ]);
+        $product_restore   = Permission::create([
+            'name' => 'product restore', 
+            'display_name' => 'Restaurar Producto',
+            'description' => 'Permite restaurar un producto eliminado anteriormente',
+            'key' => 'products',
+        ]);
+        
+        $order_list      = Permission::create([
+            'name' => 'order list', 
+            'display_name' => 'Listado de Pedidos',
+            'description' => 'Permite acceder al listado de pedidos',
+            'key' => 'orders',
+        ]);
+        $order_create    = Permission::create([
+            'name' => 'order create', 
+            'display_name' => 'Crear Pedidos',
+            'description' => 'Permite crear un pedido',
+            'key' => 'orders',
+        ]);
+        $order_update    = Permission::create([
+            'name' => 'order update', 
+            'display_name' => 'Actualizar Pedidos',
+            'description' => 'Permite actualizar un pedido',
+            'key' => 'orders',
+        ]);
+        $order_delete    = Permission::create([
+            'name' => 'order delete', 
+            'display_name' => 'Eliminar Pedidos',
+            'description' => 'Permite eliminar un pedido',
+            'key' => 'orders',
+        ]);
+        $order_restore   = Permission::create([
+            'name' => 'order restore', 
+            'display_name' => 'Restaurar Pedido',
+            'description' => 'Permite restaurar un pedido eliminado anteriormente',
+            'key' => 'orders',
+        ]);
+
         /**
          * Assign permissions to role
          */
@@ -137,11 +200,17 @@ class RoleAndPermissionsSeeder extends Seeder
             $permission_list,
             $user_list, $user_create, $user_update, $user_delete, $user_restore,
             $role_list, $role_create, $role_update, $role_delete, $role_restore,
+            // Test Bamba
+            $product_list, $product_create, $product_update, $product_delete, $product_restore,
+            $order_list, $order_create, $order_update, $order_delete, $order_restore
         ]);
         $role_user->syncPermissions([
             $user_list,
             $role_list,
             $permission_list, 
+            // Test Bamba
+            $product_list,
+            $order_list,
         ]);
     }
 }

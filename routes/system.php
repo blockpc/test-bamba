@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\System\DashboardController;
 use App\Http\Controllers\System\PermissionsController;
+use App\Http\Controllers\System\ProductsController;
 use App\Http\Controllers\System\ProfileController;
 use App\Http\Controllers\System\RolesController;
 use App\Http\Controllers\System\UsersController;
@@ -30,5 +31,8 @@ Route::middleware([
 
         Route::get('/permisos', PermissionsController::class)
             ->name('permissions.index');
+
+        /* Test Bamba Routes */
+        Route::get('/productos', ProductsController::class)->name('system.products.index');
     });
 });

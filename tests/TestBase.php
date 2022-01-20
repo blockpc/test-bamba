@@ -48,6 +48,10 @@ class TestBase extends TestCase
         $this->user_list = $this->new_permission('user list');
         $this->role_list = $this->new_permission('role list');
 
+        /* test Bamba */
+        $this->product_list = $this->new_permission('product list');
+        $this->product_create = $this->new_permission('product create');
+
         $this->role_sudo->givePermissionTo([
             $this->super_admin, 
         ]);
@@ -56,10 +60,15 @@ class TestBase extends TestCase
             $this->permission_list, 
             $this->user_list,
             $this->role_list,
+            /* test Bamba */
+            $this->product_list,
+            $this->product_create,
         ]);
 
         $this->role_user->givePermissionTo([
             $this->permission_list, 
+            /* test Bamba */
+            $this->product_list, 
         ]);
 
         $this->sudo = $this->new_user([

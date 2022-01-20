@@ -27,4 +27,18 @@ Correr el comando `php artisan migrate --seed` o `php artisan migrate:fresh --se
 
 Todos los usuarios registrados desde el frontend tendran el rol _user_
 
-Se puede revisar los usuarios (y sus claves) por defecto desde el seeder _UsersSeeder_
+Se agregaron los siguientes permisos, para mantener la consistencia del backend:  
+
+- product_list, product_create, product_update, product_delete, product_restore
+- order_list, order_create, order_update, order_delete, order_restore
+
+El cargo _sudo_ tiene permiso de super usuario.
+El cargo _admin_ tiene permisos de administrador.
+El cargo _user_ tiene permisos restringidos
+
+Se pueden revisar los usuarios (y sus claves) por defecto desde el seeder _UsersSeeder_
+Se pueden revisar los cargos y permisos por defecto desde el seeder _RoleAndPermissionsSeeder_
+
+### Test para Productos
+
+Se encuentran en _tests/Products_
