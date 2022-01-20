@@ -125,7 +125,7 @@ final class DeleteAndRestoreProductsTest extends TestBase
         try {
             Livewire::actingAs($this->user)
                 ->test(Table::class)
-                ->call('restore', $this->product);
+                ->call('restore', $this->product->id);
         } catch (\Throwable $th) {
             $this->assertEquals('User does not have any of the necessary access rights.', $th->getMessage());
         }

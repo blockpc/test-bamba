@@ -55,7 +55,6 @@ final class CreateAndUpdateProductsTest extends TestBase
             'product sku is too long' => ['product.sku', str_repeat('*', 33), 'max'],
             'product sku exists' => ['product.sku', 'SKU01', 'unique'],
             'product price is required' => ['product.price', null, 'required'],
-            'product min price is not numeric value' => ['product.price', 'qwe', 'regex'],
             'product min price must be 0' => ['product.price', -1.0, new IsDecimal],
         ];
     }
