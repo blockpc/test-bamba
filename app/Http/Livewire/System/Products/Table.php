@@ -24,7 +24,6 @@ class Table extends Component
     public function mount()
     {
         $this->products_deleted = false;
-        $this->authorizeRoleOrPermission(['product delete', 'product restore']);
     }
 
     public function getProductsProperty()
