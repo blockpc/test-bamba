@@ -20,6 +20,12 @@ x-transition:leave-end="opacity-0">
             <span>{{__('Products')}}</span>
         </div>
     </x-sidebar-link>
+    <x-sidebar-link :href="route('system.orders.index')" :active="request()->routeIs('system.orders.index')">
+        <div class="flex space-x-2 items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5 fill-current"><path d="M21 4H2v2h2.3l3.28 9a3 3 0 0 0 2.82 2H19v-2h-8.6a1 1 0 0 1-.94-.66L9 13h9.28a2 2 0 0 0 1.92-1.45L22 5.27A1 1 0 0 0 21.27 4 .84.84 0 0 0 21 4zm-2.75 7h-10L6.43 6h13.24z"></path><circle cx="10.5" cy="19.5" r="1.5"></circle><circle cx="16.5" cy="19.5" r="1.5"></circle></svg>
+            <span>{{__('Orders')}}</span>
+        </div>
+    </x-sidebar-link>
     @endif
     <hr class="border border-gray-200 dark:border-gray-600 mx-2">
     {{-- User List --}}

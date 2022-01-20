@@ -1,8 +1,8 @@
 <div>
     @if ( $role->exists )
-    <h2 class="text-bse md:text-lg mb-4 text-center">{{$role->name}}</h2>
+    <h2 class="text-base md:text-lg mb-4 text-center">{{$role->name}}</h2>
     @else
-    <h2 class="text-bse md:text-lg mb-4 text-center">{{__('New Role')}}</h2>
+    <h2 class="text-base md:text-lg mb-4 text-center">{{__('New Role')}}</h2>
     @endif
     <form wire:submit.prevent="save">
         <div class="w-full md:w-1/2 mx-auto" @table-roles.window="open = 'table'">

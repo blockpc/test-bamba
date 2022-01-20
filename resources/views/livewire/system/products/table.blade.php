@@ -68,7 +68,7 @@
                                                 <button wire:click="restore({{$product->id}})" type="button" class="btn btn-primary" x-on:click="showModal = false">{{__('Restore product')}}</button>
                                             </x-slot>
                                             <h2 class="py-4 text-2xl font-semibold mx-auto">Product {{$product->sku}}</h2>
-                                            <p>¿{{__('Are you sure you want to restore the associated product?')}}</p>
+                                            <p class="text-center">¿{{__('Are you sure you want to restore the associated product?')}}</p>
                                         </x-modals.mini>
                                     </div>
                                     @endif
@@ -90,7 +90,7 @@
                                                 <button wire:click="delete('{{$product->id}}')" type="button" class="btn btn-danger" x-on:click="showModal = false">{{__('Delete product')}}</button>
                                             </x-slot>
                                             <h2 class="py-4 text-2xl font-semibold mx-auto">Product {{$product->sku}}</h2>
-                                            <p>{{__('Are you sure you want to delete the associated product?')}}</p>
+                                            <p class="text-center">¿{{__('Are you sure you want to delete the associated product?')}}</p>
                                         </x-modals.mini>
                                     </div>
                                     @endif

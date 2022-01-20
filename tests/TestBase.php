@@ -35,6 +35,9 @@ class TestBase extends TestCase
     protected Permission $product_update;
     protected Permission $product_delete;
     protected Permission $product_restore;
+
+    protected Permission $order_list;
+    protected Permission $order_create;
     
     protected function setUp():void
     {
@@ -61,6 +64,8 @@ class TestBase extends TestCase
         $this->product_update = $this->new_permission('product update');
         $this->product_delete = $this->new_permission('product delete');
         $this->product_restore = $this->new_permission('product restore');
+        $this->order_list = $this->new_permission('order list');
+        $this->order_create = $this->new_permission('order create');
 
         $this->role_sudo->givePermissionTo([
             $this->super_admin, 
@@ -72,12 +77,14 @@ class TestBase extends TestCase
             $this->role_list,
             /* test Bamba */
             $this->product_list, $this->product_create, $this->product_update, $this->product_delete, $this->product_restore,
+            $this->order_list, $this->order_create,
         ]);
 
         $this->role_user->givePermissionTo([
             $this->permission_list, 
             /* test Bamba */
             $this->product_list, 
+            $this->order_list, 
         ]);
 
         $this->sudo = $this->new_user([

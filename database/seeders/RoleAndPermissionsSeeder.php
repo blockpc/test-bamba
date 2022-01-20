@@ -46,13 +46,6 @@ class RoleAndPermissionsSeeder extends Seeder
             'key' => 'sudo',
         ]);
 
-        // $jobs_control = Permission::create([
-        //     'name' => 'jobs control', 
-        //     'display_name' => 'Control Tareas',
-        //     'description' => 'Controla las tareas pendientes y fallidas del sistema',
-        //     'key' => 'jobs',
-        // ]);
-
         $settings_control = Permission::create([
             'name' => 'settings control', 
             'display_name' => 'Control Configuración',

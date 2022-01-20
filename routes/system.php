@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\System\DashboardController;
+use App\Http\Controllers\System\OrdersController;
 use App\Http\Controllers\System\PermissionsController;
 use App\Http\Controllers\System\ProductsController;
 use App\Http\Controllers\System\ProfileController;
@@ -34,5 +35,6 @@ Route::middleware([
 
         /* Test Bamba Routes */
         Route::get('/productos', ProductsController::class)->name('system.products.index');
+        Route::get('/pedidos', OrdersController::class)->name('system.orders.index');
     });
 });
